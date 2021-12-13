@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 export const TaskList = ({ tasks, setTasks }) => {
   // Taskの状態を切り替える
@@ -13,13 +13,18 @@ export const TaskList = ({ tasks, setTasks }) => {
     <ul>
       {tasks.map((task, index) => (
         <li key={`todo-${index}`}>
-          {task.isDone ? <s>{task.label}</s> : task.label}
           <input
             onChange={(e) => handleCheckBox(e, index)}
             type="checkbox"
             checked={task.isDone}
           />
-          {task.category}
+          {task.isDone ? <s>{task.label}</s> : task.label}(
+          {task.category ? (
+            <span>{task.category} </span>
+          ) : (
+            <span>No Category</span>
+          )}
+          )
         </li>
       ))}
     </ul>

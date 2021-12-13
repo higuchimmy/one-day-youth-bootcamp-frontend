@@ -23,6 +23,7 @@ export const TaskForm = ({
 
   return (
     <>
+    <h4>・カテゴリーを選んでください</h4>
       <input
         onChange={() => setCategory("課題")
 }
@@ -31,7 +32,6 @@ export const TaskForm = ({
         placeholder="Enter the task"
       />
       <label>課題</label>
-
       <input
         onChange={() =>setCategory("趣味")}
         type="radio"
@@ -39,6 +39,8 @@ export const TaskForm = ({
         placeholder="Enter the task"
       />
       <label>趣味</label>
+      <br />
+      <h4>・タスクを入力してください</h4>
       <input
         onChange={(e) => {
           setNewTaskLabel(e.target.value);
@@ -47,8 +49,11 @@ export const TaskForm = ({
         value={newTaskLabel}
         placeholder="Enter the task"
       />
+    <br />
       <button onClick={handleAddTask}>Add</button>
       <br />
+      <br />
+      <h4>・全てのタスクを削除</h4>
       <button onClick={handleClearTasks}>Clear</button>
     </>
   );
